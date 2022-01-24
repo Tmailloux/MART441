@@ -1,0 +1,3 @@
+441 HW-1 ReadMe
+
+This assignment was fairly difficult to grasp as I haven't taken MART 431. I was able to bring together the assignment by looking through the 431 website, the book, and the example website. Although, once I got used to CSS, the rest was fairly simple layout desing and bug fixing. In the future I may have to change the way I set up my CSS syntax as right now it is simplified for the assignment. 
