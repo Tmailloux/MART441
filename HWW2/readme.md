@@ -1,0 +1,3 @@
+441 HW-2 ReadME
+
+This assignmnet was relatively simple since I was already familiar with JS and had used it in MART 120. I couldnt figure out the formatting for a list in console log, so while the comments within the js file still answer the questions for the homework, they dont appear within the browser js menu. I also added photos of the artits in my list and added an unblur effect through CSS when the photos are hovered over. 
