@@ -1,0 +1,104 @@
+<html>
+    <style>
+        body{
+            background-color: blanchedalmond;
+        }
+    </style>
+    <script>
+        function playerDecision1(){
+            var myDecision = document.getElementById("decision").value;
+            var myQuestion = document.getElementById("question");
+            if (myDecision === "Sword"){
+                    document.getElementById("decision").style.display="none";
+                    document.getElementById("btnChoose").style.display="none";
+
+                    document.getElementById("mainImage").src = "Images/Sword.jpeg"
+                    document.getElementById("decision2").style.display="block";
+                    document.getElementById("btnChoose2").style.display="block";
+
+                    myQuestion.innerHTML = "You lift the sword. The steal glows in the sunlight.";
+            }
+            else if (myDecision === "Bow"){
+                document.getElementById("decision").style.display="none";
+                document.getElementById("btnChoose").style.display="none";
+
+                document.getElementById("mainImage").src = "Images/Bow.webp"
+                document.getElementById("decision3").style.display="block";
+                document.getElementById("btnChoose3").style.display="block";
+                
+                myQuestion.innerHTML = "You throw the bow over your shoulder. What kind of arrows will you bring?";
+
+            }
+
+            else {
+                myQuestion.innerHTML = "Try Again.";
+            }
+        }
+
+        function playerDecision2(){
+            var answer = document.getElementById("decision2").value;
+            var myQuestion = document.getElementById("question");
+            if (answer === "Sheathe"){
+
+                myQuestion.innerHTML = "You are careful. You sheathe your sword and leave toward the dark forest behind the village...";
+                document.getElementById("mainImage").src = "Images/Forest.jpeg"
+                document.getElementById("btnChoose2").style.display="none"
+                document.getElementById("btnChoose4").style.display="block";
+            }
+
+            else if(answer === "Keep in Hand"){
+                myQuestion.innerHTML = "You leave your cottage, sword in hand, walking toward the forest behind the small village. ";
+                document.getElementById("mainImage").src = "Images/Forest.jpeg"
+                document.getElementById("btnChoose2").style.display="none"
+                document.getElementById("btnChoose4").style.display="block";
+            }
+            else {
+                myQuestion.innerHTML = "Try Again.";
+            }
+        }
+
+        function playerDecision3(){
+            var answer = document.getElementById("decision3").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "Wooden"){
+                myQuestion.innerHTML = "You grab the wooden arrow quiver and leave toward the dark forest behind the village...";
+                document.getElementById("mainImage").src = "Images/Forest.jpeg"
+                document.getElementById("btnChoose3").style.display="none"
+                document.getElementById("btnChoose4").style.display="block";
+            }
+            else if(answer === "Iron Tip"){
+                myQuestion.innerHTML = "You grab the iron tip arrow quiver and leave toward the dark forest behind the village...";
+                document.getElementById("mainImage").src = "Images/Forest.jpeg"
+                document.getElementById("btnChoose3").style.display="none"
+                document.getElementById("btnChoose4").style.display="block";
+             }
+         }
+     
+    </script>
+    <body>
+
+        <h1>The Adventurer</h1>
+        <img src="Images/Cottage.jpeg" id="mainImage">
+        
+        <div id="question">
+            <br>
+            You are about to step out the door to go on your next great adventure.
+            <br>
+            What do you grab?
+        </div>
+
+        <input type="text" id="decision" value="Sword or Bow?">
+        <button id="btnChoose" onclick="playerDecision1()";> Proceed </button>
+
+        <input type="text" id="decision2" value="Sheathe or Keep in Hand" style="display: none;">
+        <button id="btnChoose2" onclick="playerDecision2()" style="display: none;">Proceed</button>
+
+        <input type="text" size='30' id="decision3" value="Wooden (Light), Iron Tip(Heavy)" style="display: none;">
+        <button id="btnChoose3" onclick="playerDecision3()" style="display: none;"> Proceed </button>
+
+        
+        <button id="btnChoose4" onclick="history.go(0)" style="display: none;"> Restart </button>
+    </body>
+    
+
+</html>
