@@ -1,0 +1,3 @@
+# HWW5
+
+I wasnt able to complete this weeks assignment in the way i wanted to. After following along with the example files I began getting an error message saying that the images I was trying to change to were undefined and that the files could not be found. I couldn't figure out what the linking problem was, because my "blank" images were showing up but the replacement images weren't. After trying to figure this out over the course of a couple hours, I apparantely changed the code to the point where the page wouldn't even load. Overall, I think I need to review the content surrounding arrays.
