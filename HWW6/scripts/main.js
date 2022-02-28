@@ -67,8 +67,8 @@ function imagesDisappear()
 {
 
     console.log(firstChoice);
-    document.getElementById(imageNames[firstChoice]).src = blankimagePath;
-    document.getElementById(imageNames[secondChoice]).src = blankimagePath;
+    document.getElementById(imageIDs[firstChoice]).src = blankimagePath;
+    document.getElementById(imageIDs[secondChoice]).src = blankimagePath;
     firstChoice = -1;
     secondChoice = -1;
 }
@@ -82,7 +82,7 @@ function addInfo(){
     player.lastname = lastname;
     player.age = age;
     localStorage.setItem("playerInfo", JSON.stringify(player));
-    window.location = "end.html";
+    window.location = "index.html";
 }
 
 function playerInfo(){
