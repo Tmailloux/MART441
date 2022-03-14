@@ -1,0 +1,18 @@
+#myImage{
+    width: 250px;
+    height: 300px;
+}
+
+body{
+    background: cadetblue;
+    color: black;
+}
+
+#moveShape{
+    width: 25px;
+    height: 25px;
+    background: blue;
+    position: absolute;
+    left: 10;
+    top: 400;
+}
