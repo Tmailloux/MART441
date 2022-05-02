@@ -1,0 +1,3 @@
+ ## HW Week 15
+
+ I had some difficulty with understanding the order and structure of node.js in the beginning. Trying to think of all the necessary steps in order to open files, find and read data, and then write it somewhere else became easier the more I did it and after I saw the structure from the example. I can see how after this semseter the use of a server side application to help store and overwrite data that can be given from the client side is useful. Whether that data can be recorded for the privacy of the user like a username/password or if it could change the users experience of the website or application, it can be direclty manipulated behind the scenes while the rest of the applictaion is running. 
