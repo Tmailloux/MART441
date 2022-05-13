@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>three.js Final "Loading Screen"</title>
+  <link rel="stylesheet" href="./CSS/main.css">
+  <link type="text/css" rel="stylesheet" href="CSS/fonts.css">
+
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+  <script src="libs/MaterialLoader.js"></script>
+  <script src="libs/ObjectLoader.js"></script>
+
+
+  <script>
+
+    var Obj;
+    var Obj2;   
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+    camera.position.z = 125;
+
+    
+    var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+    renderer.setClearColor("#637a8c");
+    renderer.setSize(window.innerWidth,window.innerHeight);
+    
+
+    document.body.appendChild(renderer.domElement);
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth,window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+
+        camera.updateProjectionMatrix();
+    })
+
+    
+    var light = new THREE.PointLight(0xFFFFFF, 1.4, 1500)
+    light.position.set(15,15,15);
+    scene.add(light);
+
+    
+   
+
+    
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load('objects/Donut.mtl', function (materials) {
+
+        materials.preload();
+
+        
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load('Objects/Donut.obj', function (object) {
+            scene.add(object);
+            Obj = object;
+            object.position.z -= 600;
+            object.rotation.x = 0;
+
+        });
+    });
+
+    
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load('Objects/Orb.mtl', function (materials) {
+
+        materials.preload();
+
+      
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load('Objects/Orb.obj', function (object) {
+            scene.add(object);
+            Obj2 = object; 
+
+            object.position.z -= 455;
+            object.position.x = 0;
+            object.rotation.x = 42;
+        
+
+            
+        });
+    });
+
+
+
+
+    var render = function() {
+        requestAnimationFrame(render);
+        
+        Obj.rotation.x -= .04;
+        Obj2.rotation.y -= .1;
+        renderer.render(scene, camera);
+    }
+    render();
+
+    </script>
+
+    <div id="info">Loading . . .</div>
+
+  </body>
+
+</html>
